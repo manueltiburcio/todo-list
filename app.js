@@ -2,6 +2,10 @@ const addForm = document.querySelector('.add');
 const list = document.querySelector('.todos');
 const search = document.querySelector('.search input');
 
+const todos = JSON.parse(localStorage.getItem('todos'));
+
+console.log(todos);
+
 const generateTemplate = todo => {
 
 
@@ -26,6 +30,13 @@ addForm.addEventListener('submit', e => {
         addForm.reset();
     }
     
+    // localStorage.setItem('todo', todo);
+
+    // if(localStorage.getItem('todo')){
+    //     generateTemplate(todo);
+    //     addForm.reset();
+    // };
+
 
 });
 
@@ -55,3 +66,5 @@ search.addEventListener('keyup', () => {
     const term = search.value.trim().toLowerCase();
     filterTodos(term)
 });
+
+
